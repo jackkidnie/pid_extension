@@ -5,7 +5,7 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "PID_Extension": "github:jackkidnie/pid_extension#d12de22610be557233c2ea18944db2199c6d6fbe",
+        "PID_Extension": "github:jackkidnie/pid_extension#c03221b5feaa030a913a9a6f088a920821cd9b47",
         "cutebot": "github:elecfreaks/pxt-cutebot#v6.2.4"
     },
     "files": [
