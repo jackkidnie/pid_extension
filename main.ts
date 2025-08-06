@@ -1,21 +1,20 @@
-//% block="read ultrasonic distance in cm"
-//% group="Sensors"
-namespace sensors {
-    /**
-     * Reads distance using ultrasonic sensor on P1 (Trig) and P2 (Echo)
-     * Returns distance in cm
-     */
-    //% block
-    export function readUltrasonicPID(): number {
-        pins.setPull(DigitalPin.P2, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P1, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P1, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(DigitalPin.P1, 0);
+//% color=#009999 icon="\uf06e" block="IR Sensor"
+namespace IR_sensor {
+    const VL53L0X_ADDR = 0x29
 
-        const duration = pins.pulseIn(DigitalPin.P2, PulseValue.High, 23000);
-        const distance = duration * 0.0343 / 2;
-        return Math.round(distance);
+    //% block="initialize IR sensor"
+    //% group="IR"
+    export function init(): void {
+        // Minimal placeholder — real init not yet implemented
+        pins.i2cWriteNumber(VL53L0X_ADDR, 0x00, NumberFormat.UInt8BE)
+        basic.pause(10)
+    }
+
+    //% block="read IR distance in mm"
+    //% group="IR"
+    export function readDistance(): number {
+        // Placeholder: tries to read result from 0x1E (not guaranteed to work)
+        let raw = pins.i2cReadNumber(VL53L0X_ADDR, NumberFormat.UInt16BE)
+        return raw
     }
 }
