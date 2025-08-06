@@ -1,5 +1,5 @@
 {
-    "name": "PID_Extension",
+    "name": "pid_extension",
     "description": "",
     "dependencies": {
         "core": "*",
