@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "PID_Extension": "github:jackkidnie/pid_extension#a9abc1d3768296cc2014dd5ea52565215e1debf2"
     },
     "files": [
         "main.blocks",
